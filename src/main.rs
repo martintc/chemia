@@ -1,9 +1,11 @@
+pub mod models;
+
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Data {
     #[serde(rename(deserialize = "copr-cli"))]
-    coprcli: Option<CoprCli>
+    coprcli: Option<CoprCli>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -26,8 +28,8 @@ fn get_configuration() -> Data {
     let file_contents = std::fs::read_to_string(home_dir.display().to_string())
         .expect("Could not read contents of configuration file");
 
-
-    toml::from_str::<Data>(file_contents.as_str()).expect("Could not deserialzie the configuration file")
+    toml::from_str::<Data>(file_contents.as_str())
+        .expect("Could not deserialzie the configuration file")
 }
 
 fn main() {
