@@ -5,3 +5,5 @@ WORKDIR /app
 COPY . /app
 
 RUN dnf -y install rust cargo
+
+RUN cargo build
