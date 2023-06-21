@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ProjectChroot {
@@ -20,5 +20,5 @@ pub struct ProjectChroot {
 
     delete_after_days: Option<u32>,
 
-    isolation: Option<String>
+    isolation: Option<String>,
 }

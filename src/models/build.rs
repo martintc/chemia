@@ -25,7 +25,7 @@ pub struct Build {
     state: Option<String>,
 
     submitted_on: Option<u64>,
-    
+
     submitter: Option<String>,
 
     #[serde(rename(deserialize = "source_package"))]

@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 use crate::models::build::Build;
 
@@ -6,5 +6,5 @@ use crate::models::build::Build;
 pub struct PackageBuilds {
     latest: Vec<Build>,
 
-    latest_succeeded: Vec<Build>
+    latest_succeeded: Vec<Build>,
 }

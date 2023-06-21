@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 use super::package_builds::PackageBuilds;
 
@@ -18,5 +18,5 @@ pub struct Package {
 
     auto_rebuild: Option<bool>,
 
-    builds: Vec<PackageBuilds>
+    builds: Vec<PackageBuilds>,
 }
