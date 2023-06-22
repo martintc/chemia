@@ -1,12 +1,12 @@
 pub mod models;
 
-use std::{error::Error};
+use std::error::Error;
 use std::fmt;
 use std::process::exit;
 
 use clap::{Parser, Subcommand};
-use serde::{Deserialize, Serialize};
 use lazy_static::lazy_static;
+use serde::{Deserialize, Serialize};
 
 #[allow(dead_code, unused_attributes, unused_variables)]
 
@@ -23,7 +23,7 @@ impl fmt::Display for ArgumentError {
     }
 }
 
-impl Error for ArgumentError { }
+impl Error for ArgumentError {}
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -105,11 +105,11 @@ fn main() -> Result<(), Box<dyn Error>> {
     };
 
     match command {
-        Commands::Build { build_id} => {
+        Commands::Build { build_id } => {
             if let Err(e) = fetch_build(build_id) {
                 println!("{}", e);
             }
-        },
+        }
         _ => {
             println!("Unrecognized command");
             exit(0);
